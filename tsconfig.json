@@ -1,0 +1,26 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"display": "Node 20.1",
+	"include": ["src/"],
+	"exclude": ["**/*.test.ts", "node_modules"],
+	"compilerOptions": {
+		"lib": ["es2020", "ES2021.String"],
+		"module": "commonjs",
+		"types": ["node"],
+		"target": "es2020",
+		"strict": true,
+		"declaration": true,
+		"noImplicitAny": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"sourceMap": true,
+		"typeRoots": ["./node_modules/@types"],
+		"outDir": "dist",
+		"allowJs": true
+	},
+	"ts-node": {
+		"files": true
+	}
+}

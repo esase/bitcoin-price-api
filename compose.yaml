@@ -1,0 +1,23 @@
+services:
+  redis:
+    container_name: bitcoin_price_cache
+    image: 'redis:alpine'
+    env_file:
+      - .env
+    ports:
+      - ${REDIS_PORT}:${REDIS_PORT}
+
+  api:
+    container_name: bitcoin_price_api
+    build:
+      context: .
+      dockerfile: Dockerfile-local
+    env_file:
+      - .env
+    volumes:
+      - "./:/app"
+      - "/app/node_modules"
+    ports:
+      - ${PORT}:${PORT}
+    depends_on:
+      - redis

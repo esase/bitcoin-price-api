@@ -1,0 +1,8 @@
+/node_modules/
+dist/
+*.heapsnapshot
+.env
+.githooks
+/.vscode
+/coverage
+.scannerwork
